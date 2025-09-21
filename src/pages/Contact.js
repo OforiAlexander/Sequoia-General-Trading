@@ -58,25 +58,42 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: '📧',
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      ),
       title: 'Email Address',
       details: 'sequoia.trades@outlook.com',
       description: 'Send us an email anytime'
     },
     {
-      icon: '📞',
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+      ),
       title: 'Phone Number',
       details: '+233 55 388 2284',
       description: 'Call us during business hours'
     },
     {
-      icon: '🏢',
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+      ),
       title: 'Business Registration',
       details: 'Ghana',
       description: 'Registered in Ghana as General Merchants'
     },
     {
-      icon: '🕐',
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+          <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+        </svg>
+      ),
       title: 'Business Hours',
       details: 'Mon - Fri: 8:00 AM - 6:00 PM',
       description: 'Ghana Standard Time (GMT)'
@@ -96,9 +113,17 @@ const Contact = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="hero-section" style={{ minHeight: '60vh' }}>
-        <div className="hero-overlay"></div>
+      {/* Hero Section with Background Image */}
+      <section 
+        className="hero-section contact-section" 
+        style={{
+          minHeight: '60vh',
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/contact_hero.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <Container>
           <Row className="justify-content-center text-center">
             <Col lg={8}>
@@ -234,10 +259,16 @@ const Contact = () => {
               </div>
             </Col>
 
+            {/* Sticky Contact Information Sidebar */}
             <Col lg={4}>
               <div 
                 id="contact-info"
                 className={`animate-on-scroll ${visibleElements.has('contact-info') ? 'visible' : ''}`}
+                style={{
+                  position: 'sticky',
+                  top: '100px',
+                  alignSelf: 'flex-start'
+                }}
               >
                 <h3 className="text-primary-green mb-4">Contact Information</h3>
                 
@@ -246,11 +277,13 @@ const Contact = () => {
                     <Card.Body className="p-3">
                       <div className="d-flex align-items-start">
                         <div 
-                          className="me-3"
+                          className="me-3 d-flex align-items-center justify-content-center"
                           style={{
-                            fontSize: '1.5rem',
                             width: '40px',
-                            textAlign: 'center'
+                            height: '40px',
+                            backgroundColor: 'var(--light-green)',
+                            borderRadius: '50%',
+                            color: 'white'
                           }}
                         >
                           {info.icon}
@@ -265,6 +298,31 @@ const Contact = () => {
                   </Card>
                 ))}
 
+                {/* Google Maps Placeholder */}
+                <Card className="service-card mt-4">
+                  <Card.Body className="p-3">
+                    <h6 className="text-primary-green mb-3">Our Location</h6>
+                    <div 
+                      className="bg-light d-flex align-items-center justify-content-center text-center"
+                      style={{
+                        height: '200px',
+                        borderRadius: '8px',
+                        border: '2px dashed #ccc'
+                      }}
+                    >
+                      <div>
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="var(--primary-green)" className="mb-2">
+                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <p className="mb-0 text-muted">
+                          <strong>Google Maps</strong><br />
+                          Interactive map will be embedded here
+                        </p>
+                      </div>
+                    </div>
+                  </Card.Body>
+                </Card>
+
                 <Card className="service-card mt-4">
                   <Card.Body className="p-3">
                     <h6 className="text-primary-green mb-3">Quick Inquiry</h6>
@@ -277,14 +335,20 @@ const Contact = () => {
                         size="sm"
                         href="mailto:sequoia.trades@outlook.com"
                       >
-                        📧 Email Us
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="me-2">
+                          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        Email Us
                       </Button>
                       <Button 
                         variant="outline-success" 
                         size="sm"
                         href="tel:+233553882284"
                       >
-                        📞 Call Us
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="me-2">
+                          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        Call Us
                       </Button>
                     </div>
                   </Card.Body>
@@ -295,8 +359,16 @@ const Contact = () => {
         </Container>
       </section>
 
-      {/* Services Overview */}
-      <section className="section-padding bg-light">
+      {/* Services Overview with Background */}
+      <section 
+        className="section-padding"
+        style={{
+          backgroundImage: `linear-gradient(rgba(245, 245, 245, 0.6), rgba(245, 245, 245, 0.6)), url('/contact_services_bg.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <Container>
           <Row>
             <Col lg={6}>
@@ -314,7 +386,9 @@ const Contact = () => {
                   {services.map((service, index) => (
                     <Col md={6} className="mb-2" key={index}>
                       <div className="d-flex align-items-center">
-                        <i className="text-primary-green me-2">✓</i>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--primary-green)" className="me-2">
+                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
                         <small>{service}</small>
                       </div>
                     </Col>
@@ -329,7 +403,12 @@ const Contact = () => {
               >
                 <Card className="service-card bg-primary-green text-white">
                   <Card.Body className="p-4 text-center">
-                    <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚡</div>
+                    <div className="mb-3">
+                      <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        <path d="M12 6.5h3v1h-3z"/>
+                      </svg>
+                    </div>
                     <h4 className="mb-3">Quick Response Time</h4>
                     <p className="mb-4">
                       We understand that time is crucial in business. That's why 
@@ -358,7 +437,7 @@ const Contact = () => {
       </section>
 
       {/* Location Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-light">
         <Container>
           <Row className="text-center">
             <Col lg={8} className="mx-auto">
@@ -371,8 +450,12 @@ const Contact = () => {
                   Based in Ghana, we serve clients across West Africa and 
                   maintain trading relationships with partners worldwide.
                 </p>
-                <div className="bg-light rounded p-4">
-                  <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🇬🇭</div>
+                <div className="bg-white rounded p-4 shadow-sm">
+                  <div className="mb-3">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="var(--primary-green)">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                  </div>
                   <h4 className="text-primary-green mb-2">Ghana</h4>
                   <p className="mb-0">
                     Strategically located in Ghana, we leverage our position 

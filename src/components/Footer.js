@@ -9,7 +9,6 @@ const Footer = () => {
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Services', path: '/services' },
-    { name: 'Projects', path: '/projects' },
     { name: 'Contact', path: '/contact' }
   ];
 
@@ -29,23 +28,17 @@ const Footer = () => {
           {/* Company Info */}
           <Col lg={4} md={6} className="mb-4">
             <div className="d-flex align-items-center mb-3">
-              <div 
+              <img 
+                src="/logo.svg" 
+                alt="Sequoia General Trading Logo" 
                 className="me-3"
                 style={{
-                  width: '50px',
                   height: '50px',
-                  background: 'linear-gradient(135deg, #2E7D32, #4CAF50)',
-                  borderRadius: '10px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold'
+                  width: 'auto',
+                  objectFit: 'contain',
+                  filter: 'brightness(0) invert(1)' // Makes logo white for dark footer
                 }}
-              >
-                S
-              </div>
+              />
               <div>
                 <h5 className="text-white mb-1">Sequoia General Trading</h5>
                 <small className="text-light">Big things from small places</small>
@@ -57,14 +50,14 @@ const Footer = () => {
               trading solutions.
             </p>
             <div className="mb-2">
-              <strong>📧 Email:</strong>
+              <strong> Email:</strong>
               <br />
               <a href="mailto:sequoia.trades@outlook.com" className="text-decoration-none">
                 sequoia.trades@outlook.com
               </a>
             </div>
             <div>
-              <strong>📞 Phone:</strong>
+              <strong> Phone:</strong>
               <br />
               <a href="tel:+233553882284" className="text-decoration-none">
                 +233 55 388 2284
@@ -108,19 +101,19 @@ const Footer = () => {
           <Col lg={3} md={6} className="mb-4">
             <h5 className="text-white mb-3">Business Information</h5>
             <div className="mb-2">
-              <strong>🏢 Registration:</strong>
+              <strong> Registration:</strong>
               <br />
               <span style={{ fontSize: '0.9rem' }}>
                 Ghana (General Merchants)
               </span>
             </div>
             <div className="mb-2">
-              <strong>📅 Established:</strong>
+              <strong> Established:</strong>
               <br />
               <span style={{ fontSize: '0.9rem' }}>2024</span>
             </div>
             <div className="mb-2">
-              <strong>🕐 Business Hours:</strong>
+              <strong> Business Hours:</strong>
               <br />
               <span style={{ fontSize: '0.9rem' }}>
                 Mon - Fri: 8:00 AM - 6:00 PM<br />
@@ -128,7 +121,7 @@ const Footer = () => {
               </span>
             </div>
             <div className="mb-2">
-              <strong>🌍 Coverage:</strong>
+              <strong> Coverage:</strong>
               <br />
               <span style={{ fontSize: '0.9rem' }}>
                 Ghana, West Africa & Global
@@ -148,25 +141,6 @@ const Footer = () => {
             <p className="mb-0" style={{ fontSize: '0.9rem' }}>
               Built with dedication to excellence in trading services.
             </p>
-          </Col>
-        </Row>
-
-        {/* Mission Statement */}
-        <Row className="mt-3">
-          <Col className="text-center">
-            <div 
-              className="p-3 rounded"
-              style={{ 
-                backgroundColor: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.1)'
-              }}
-            >
-              <p className="mb-0 fst-italic" style={{ fontSize: '0.9rem' }}>
-                "To provide high-quality products and exceptional service, fostering 
-                long-term relationships with our clients and partners while contributing 
-                to the economic growth of Ghana."
-              </p>
-            </div>
           </Col>
         </Row>
       </Container>

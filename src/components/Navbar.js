@@ -32,23 +32,16 @@ const NavigationBar = () => {
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={closeNavbar}>
           <div className="d-flex align-items-center">
-            <div 
+            <img 
+              src="/logo.svg" 
+              alt="Sequoia General Trading Logo" 
               className="me-3"
               style={{
-                width: '50px',
                 height: '50px',
-                background: 'linear-gradient(135deg, #2E7D32, #4CAF50)',
-                borderRadius: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontSize: '1.5rem',
-                fontWeight: 'bold'
+                width: 'auto',
+                objectFit: 'contain'
               }}
-            >
-              S
-            </div>
+            />
             <div>
               <div 
                 className={`fw-bold ${scrolled ? 'text-white' : 'text-primary-green'}`}
@@ -99,14 +92,7 @@ const NavigationBar = () => {
             >
               Services
             </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/projects"
-              onClick={closeNavbar}
-              className={`${isActive('/projects') ? 'active' : ''} ${scrolled ? 'text-white' : 'text-primary-green'}`}
-            >
-              Projects
-            </Nav.Link>
+            
             <Nav.Link
               as={Link}
               to="/contact"
