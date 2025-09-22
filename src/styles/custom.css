@@ -272,6 +272,31 @@ body {
   
   .navbar-custom {
     height: 70px;
+    background-color: rgba(255, 255, 255, 0.98) !important; /* More opaque white background */
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-custom .container {
+        background-color: rgba(255, 255, 255, 0.98) !important; /* More opaque white background */
+  }
+  
+  /* Ensure navbar is always white on mobile */
+  .navbar-custom.navbar-transparent,
+  .navbar-custom.navbar-solid {
+    background-color: rgba(255, 255, 255, 0.98) !important;
+  }
+  
+  /* Make sure text is dark on mobile white background */
+  .navbar-custom .navbar-nav .nav-link {
+    color: var(--primary-green) !important;
+  }
+  
+  .navbar-custom .navbar-brand div {
+    color: var(--primary-green) !important;
+  }
+  
+  .navbar-custom .navbar-brand div:last-child {
+    color: var(--dark-gray) !important;
   }
   
   .hero-section,

@@ -31,7 +31,7 @@ const NavigationBar = () => {
     >
       <Container>
         <Navbar.Brand as={Link} to="/" onClick={closeNavbar}>
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center resp">
             <img 
               src="/logo.svg" 
               alt="Sequoia General Trading Logo" 
